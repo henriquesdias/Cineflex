@@ -17,10 +17,12 @@ header{
   justify-content: center;
   background-color: #C3CFD9;
 }
-main{
-  margin: 80px auto 0 auto;
+.films{
+  margin: 0 auto 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  width: 95%;
 }
 .image{
   width: 145px;
@@ -28,8 +30,45 @@ main{
   border-radius: 3px;
   background-color: white;
   box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.1);
+  padding: 9px;
+  margin-bottom: 11px;
 }
 .image img {
   width: 100%;
   height: 100%;
+}
+.title{
+  margin-top: 67px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 110px;
+  font-size: 24px;
+  color: #293845;
+}
+.info{
+  width: 95%;
+  margin: 0 auto 23px auto;
+}
+.info > span{
+  font-size: 20px;
+  color: #293845; 
+}
+.info > div{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 22px;
+}
+.time{
+    width: 83px;
+    height: 43px;
+    border-radius: 3px;
+    background-color: #E8833A;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-right: 8px;
 }
