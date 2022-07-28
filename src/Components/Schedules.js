@@ -1,25 +1,37 @@
 import { useParams } from "react-router-dom";
 import { useEffect,useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
-
+function Time({ day, date, hours }) {
+  return (
+    <div className="info">
+      <span>
+        {day} - {date}
+      </span>
+      <div>
+        {hours.map( (element,index) => (
+          <Link to={element.id} key={index}>
+            <div className="time" key={index}>{element.name}</div>  
+          </Link>
+        ) )}
+      </div>
+    </div>
+  );
+}
 export default function Schedules(){
-  const idFilm = useParams();
+  const { idFilm } = useParams();
   const [listOfSessionTime , setListOfSessionTime ] = useState([]);
   useEffect( () => {
-    const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilm}/showtimes`);
-
-  })
+    const promise = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilm[1]}/showtimes`);
+    promise.then( answer => setListOfSessionTime(answer.data.days)); 
+  },[]);
   return (
       <>
         <h1 className="title">Selecione o horário</h1>
-        <div className="info">
-          <span>Quinta-feira - 24/06/2021</span>
-          <div>
-            <div className="time">15:00</div>
-            <div className="time">19:00</div>
-          </div>
-        </div>
+        {listOfSessionTime.map( (time,index) => (
+          <Time day={time.weekday} date={time.date} key={index} hours={time.showtimes} />
+        ) )}
       </>
     )
 }
