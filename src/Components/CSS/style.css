@@ -100,3 +100,79 @@ footer img{
   width: 100%;
   height: 100%;
 }
+.seats{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 95%;
+  max-width: 610px;
+  margin: 0 auto 0 auto;
+}
+.circle{
+  width: 26px;
+  height: 26px;
+  background-color: #C3CFD9;
+  border-radius: 50%;
+  border: 1px solid #808F9D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 7px;
+  margin-bottom: 18px;
+  font-size: 11px;
+}
+.info-seats{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 0 auto;
+  font-size: 13px;
+  color: #4E5A65;
+}
+.info-seats > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-seats > div > div{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.select{
+  background-color: #8DD7CF;
+  border: 1px solid #49AF9F;
+}
+.disponible{
+  background-color: #C3CFD9;
+  border: 1px solid #7B8B99;
+  margin: 0 27px;
+}
+.indisponible{
+  background-color: #FBE192;
+  color: #F7C52E;
+}
+form{
+  width: 90%;
+  max-width: 320px;
+  margin: 41px auto;
+}
+form p{
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+form div{
+  display: flex;
+  flex-direction: column;
+}
+input{
+  height: 37px;
+  border-radius: 3px;
+  border: 1px solid #AFAFAF;
+  font-style: italic;
+  margin: 10px;
+}
+input::placeholder{
+  color: #AFAFAF;
+}
+
+

@@ -11,7 +11,7 @@ function Time({ day, date, hours }) {
       </span>
       <div>
         {hours.map((element, index) => (
-          <Link to={`/assentos/:${element.id}`} key={index}>
+          <Link to={`/assentos/:${element.id}`} key={index} style={{textDecoration:'none'}}>
             <div className="time" key={index}>
               {element.name}
             </div>
