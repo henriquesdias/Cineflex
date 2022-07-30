@@ -5,9 +5,9 @@ export default function Form(){
         <p>Nome do comprador</p>
         <input type="text" placeholder="Digite seu nome ..." />
         <p>CPF do comprador</p>
-        <input type="password" placeholder="Digite seu CPF ..."/>
+        <input type="number" placeholder="Digite seu CPF ..."/>
       </div>
-      <button type="submit">Login</button>
+      <button type="submit">Reservar assento(s)</button>
     </form>
   );
 }

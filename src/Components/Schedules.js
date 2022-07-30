@@ -25,9 +25,10 @@ export default function Schedules(){
   const { idFilm } = useParams();
   const [listOfSessionTime , setListOfSessionTime ] = useState([]);
   useEffect( () => {
-    const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${idFilm[1]}/showtimes`);
+    const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${idFilm.slice(1)}/showtimes`);
     promise.then( answer => {
       setListOfSessionTime(answer.data.days);
+      console.log(answer.data);
     }); 
   },[]);
   return (
