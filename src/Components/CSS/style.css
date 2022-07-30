@@ -189,5 +189,44 @@ button{
   font-size: 18px;
   margin-left: 29px;
 }
+.sucess{
+  width: 100%;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 67px 0 20px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #327A6B;
+  text-align: center;
+}
+.info-sucess{
+  width: 95%;
+  max-width: 492px;
+  margin: 0 auto;
+}
+.info-sucess h2{
+  font-weight: bold;
+  font-size: 24px;
+  color: #293845;
+  margin: 20px 0 10px 0;
+}
+.info-sucess p{
+  font-size: 22px;
+  color: #293845;
+}
+.home{
+  width: 225px;
+  height: 42px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #E8833A;
+  font-size: 18px;
+  margin: 60px auto 189px auto;
+}
 
 

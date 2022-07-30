@@ -9,12 +9,14 @@ export default function Seats() {
   const { idSessao } = useParams();
   const [seats , setSeats] = useState([]);
   const [chosenSeats, setChosenSeats] = useState([]);
+  const [completeInfoMovie , setCompleteInfoMovie] = useState({});
   useEffect( () => {
     const promise = axios.get(
       `https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${idSessao.slice(1)}/seats`
     );
     promise.then( answer => {
       setSeats(answer.data.seats);
+      setCompleteInfoMovie(answer.data);
     });
   },[])
   return (
