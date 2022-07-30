@@ -4,13 +4,31 @@ import { Link } from "react-router-dom";
 import Form from "./Form";
 import axios from "axios";
 
-function selectSeat(seat){
+function selectSeat(seat,setSelect,select){
   if (seat.isAvailable === false) {
     alert("Esse assento não está disponível");
+  } else {
+    if (select === "") {
+      setSelect("select");
+    } else {
+      setSelect("");
+    }
   }
 }
 
-
+function Seat({element}){
+  const [select, setSelect] = useState("");
+  return (
+    <div
+      className={
+        element.isAvailable === true ? `circle ${select}` : "circle indisponible"
+      }
+      onClick={() => selectSeat(element,setSelect,select)}
+    >
+      {element.name <= 9 ? `0${element.name}` : element.name}
+    </div>
+  );
+}
 export default function Session() {
   const { idSessao } = useParams();
   const [seats , setSeats] = useState([]);
@@ -27,10 +45,9 @@ export default function Session() {
       <>
         <h1 className="title">Selecione o(s) assento(s)</h1>
         <div className="seats">
-          {seats.map( (element,index) => (
-          <div className={element.isAvailable === true ? "circle" : "circle indisponible"} key={index} onClick={()=> selectSeat(element)}>
-            {element.name <= 9 ? `0${element.name}` : element.name}
-          </div>) )}
+          {seats.map( (element,index) => 
+          (<Seat element={element}  key={index}/>)
+        )}
         </div>
         <div className="info-seats">
           <div>
