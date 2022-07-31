@@ -50,6 +50,10 @@ header{
 .info{
   width: 95%;
   margin: 0 auto 23px auto;
+  max-width: 450px;
+}
+.info:last-child{
+  margin-bottom: 150px;
 }
 .info > span{
   font-size: 20px;
@@ -85,8 +89,9 @@ footer{
   color: #293845;
   display: flex;
   align-items: center;
+  border-top: 1px solid #9EADBA;
 }
-footer div{
+footer .img{
   width: 64px;
   height: 89px;
   border-radius: 3px;
@@ -99,6 +104,9 @@ footer div{
 footer img{
   width: 100%;
   height: 100%;
+}
+footer div:nth-child(2) > div{
+  display: flex;
 }
 .seats{
   display: flex;
@@ -158,7 +166,7 @@ footer img{
 form{
   width: 90%;
   max-width: 320px;
-  margin: 41px auto;
+  margin: 41px auto 150px auto;
 }
 form p{
   font-size: 18px;

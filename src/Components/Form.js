@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+function validateCPF(cpf){
+  if (cpf.length === 10) {
+    return true;
+  }
+  return false;
+}
 export default function Form({chosenSeats}){
   const [name, setName] = useState(""); 
   const [cpf, setCpf] = useState(""); 

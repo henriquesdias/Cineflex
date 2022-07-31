@@ -1,12 +1,15 @@
-export default function Footer({img,title}){
+export default function Footer({img,title,weekday,date}){
   return (
     <footer>
-      <div>
+      <div className="img">
         <img src={img} alt={title} />
       </div>
-      <span>
+      <div>
         {title}
-      </span>
+        <div>
+          {weekday} {date}
+        </div>
+      </div>
     </footer>
   );
 }
