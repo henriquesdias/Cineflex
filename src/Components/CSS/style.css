@@ -200,6 +200,10 @@ button{
   width: 225px;
   height: 42px;
   font-size: 18px;
+  cursor: pointer;
+}
+button:hover{
+  color: black;
 }
 .submit{
   margin: 0 auto 0 auto;
