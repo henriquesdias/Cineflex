@@ -32,7 +32,6 @@ export default function Schedules(){
     promise.then( answer => {
       setListOfSessionTime(answer.data.days);
       setCompleteInfoMovie(answer.data);
-      console.log(answer.data);
     }); 
   },[]);
   return (

@@ -24,7 +24,6 @@ export default function Seats() {
     promise.then( answer => {
       setSeats(answer.data.seats);
       setCompleteInfoMovie(answer.data);
-      console.log(answer.data.seats);
     });
   },[])
   return (

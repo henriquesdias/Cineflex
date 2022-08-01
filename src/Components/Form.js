@@ -26,7 +26,6 @@ export default function Form({ chosenSeats, completeInfoMovie , seatNumbers }) {
         name: name,
         cpf: cpf,
     };
-      console.log(chosenSeats);
       const promise = axios.post(
         "https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many",infoUser
       );

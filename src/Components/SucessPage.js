@@ -20,7 +20,9 @@ export default function Sucess() {
         ))}
         <h2>Comprador</h2>
         <p>Nome: {state.name}</p>
-        <p>CPF: {state.cpf}</p>
+        <p>
+          CPF: {state.cpf.slice(0, 3)}.{state.cpf.slice(3, 6)}.{state.cpf.slice(6,9)}-{state.cpf.slice(9,11)} 
+        </p>
       </div>
       <Link to={"/"} style={{ textDecoration: "none" }}>
         <div className="home">Voltar para Home</div>
