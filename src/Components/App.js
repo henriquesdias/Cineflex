@@ -15,7 +15,7 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" element={<PrincipalPage />}></Route>
-          <Route path="/filme/:idFilm" element={ <Schedules />}></Route>
+          <Route path="/sessoes/:idFilm" element={ <Schedules />}></Route>
           <Route path="/assentos/:idSessao" element={<Seats />}></Route>
           <Route path="/sucesso" element={<Sucess />}></Route>
         </Routes>

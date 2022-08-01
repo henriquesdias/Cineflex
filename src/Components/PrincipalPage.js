@@ -18,7 +18,7 @@ export default function PrincipalPage(){
       <h1 className="title">Selecione o filme</h1>
       <div className="films">
         {listOfFilms.map((film, index) => (
-          <Link to={`/filme/:${film.id}`} key={index}>
+          <Link to={`/sessoes/:${film.id}`} key={index}>
             <PostFilm URL={film.posterURL} alt={film.title} key={index} />
           </Link>
         ))}

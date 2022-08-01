@@ -41,6 +41,7 @@ export default function Form({ chosenSeats, completeInfoMovie , seatNumbers }) {
           },
         });   
       } )
+      promise.catch( () => alert("Assento(s) já escolhido(s)"));
    
     }else{
       alert("Preencha os dados corretamente");
