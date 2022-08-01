@@ -22,10 +22,8 @@ export default function Sucess() {
         <p>Nome: {state.name}</p>
         <p>CPF: {state.cpf}</p>
       </div>
-      <Link to={"/"}>
-        <div className="home" style={{ textDecoration: "none" }}>
-          Voltar para Home
-        </div>
+      <Link to={"/"} style={{ textDecoration: "none" }}>
+        <div className="home">Voltar para Home</div>
       </Link>
     </>
   );

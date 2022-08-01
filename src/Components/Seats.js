@@ -59,7 +59,7 @@ export default function Seats() {
         img={completeInfoMovie.movie.posterURL}
         title={completeInfoMovie.movie.title}
         weekday={completeInfoMovie.day.weekday}
-        date={completeInfoMovie.day.date}
+        date={completeInfoMovie.name}
         />
       ) : ""}
     </>

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function validateCPF(cpf){
-  if (cpf.length === 10) {
+  if (cpf.length === 11) {
     return true;
   }
   return false;
@@ -19,8 +19,8 @@ export default function Form({ chosenSeats, completeInfoMovie , seatNumbers }) {
   const [name, setName] = useState("");
   const [cpf, setCpf] = useState("");
   function rentSeats(event) {
-    if (atLeastOneSeat(seatNumbers) ){
     event.preventDefault();
+    if (atLeastOneSeat(seatNumbers) && validateCPF(cpf) ){
       const infoUser = {
         ids: chosenSeats,
         name: name,
