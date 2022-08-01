@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Sucess() {
   const {state} = useLocation();
@@ -14,12 +15,18 @@ export default function Sucess() {
           {state.date} {state.time}
         </p>
         <h2>Ingressos</h2>
-        {state.seats.map( (element,index) => (<p key={index}>Assento {element}</p>) )}
+        {state.seats.map((element, index) => (
+          <p key={index}>Assento {element}</p>
+        ))}
         <h2>Comprador</h2>
         <p>Nome: {state.name}</p>
         <p>CPF: {state.cpf}</p>
       </div>
-      <div className="home">Voltar para Home</div>
+      <Link to={"/"}>
+        <div className="home" style={{ textDecoration: "none" }}>
+          Voltar para Home
+        </div>
+      </Link>
     </>
   );
 }

@@ -7,6 +7,11 @@ function validateCPF(cpf){
   }
   return false;
 }
+function atLeastOneSeat(seatNumbers){
+  if (seatNumbers.length < 1) {
+    return false;
+  }
+}
 export default function Form({ chosenSeats, completeInfoMovie , seatNumbers }) {
   const navigate = useNavigate();
   const [name, setName] = useState("");

@@ -229,6 +229,7 @@ button{
 .info-sucess p{
   font-size: 22px;
   color: #293845;
+  line-height: 27px;
 }
 .home{
   width: 225px;
@@ -241,6 +242,9 @@ button{
   background-color: #E8833A;
   font-size: 18px;
   margin: 60px auto 189px auto;
+}
+.home:hover{
+  color: black;
 }
 
 
