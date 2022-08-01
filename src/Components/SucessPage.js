@@ -1,17 +1,23 @@
-export default function Sucess(){
+import { useLocation, useNavigate } from "react-router-dom";
+
+export default function Sucess() {
+  const {state} = useLocation();
   return (
     <>
-      <div className="sucess">Pedido feito <br /> com sucesso</div>
+      <div className="sucess">
+        Pedido feito <br /> com sucesso
+      </div>
       <div className="info-sucess">
         <h2>Filme e sessão</h2>
-          <p>Enola Holmes</p>
-          <p>24/06/2021 15:00</p>
+        <p>{state.title}</p>
+        <p>
+          {state.date} {state.time}
+        </p>
         <h2>Ingressos</h2>
-          <p>Assento 15</p>
-          <p>Assento 16</p>
+        {state.seats.map( (element,index) => (<p key={index}>Assento {element}</p>) )}
         <h2>Comprador</h2>
-          <p>Nome: Henrique Silva Dias</p>
-          <p>CPF: 610.518.813.74</p>    
+        <p>Nome: {state.name}</p>
+        <p>CPF: {state.cpf}</p>
       </div>
       <div className="home">Voltar para Home</div>
     </>

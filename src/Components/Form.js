@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function validateCPF(cpf){
   if (cpf.length === 10) {
@@ -7,17 +7,26 @@ function validateCPF(cpf){
   }
   return false;
 }
-export default function Form({chosenSeats}){
-  const [name, setName] = useState(""); 
-  const [cpf, setCpf] = useState(""); 
-  function rentSeats(event){
+export default function Form({ chosenSeats, completeInfoMovie , seatNumbers }) {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [cpf, setCpf] = useState("");
+  function rentSeats(event) {
     event.preventDefault();
     const infoUser = {
       ids: chosenSeats,
       name: name,
       cpf: cpf,
-    }
-    console.log(infoUser);
+    };
+    console.log(chosenSeats);
+    navigate("/sucesso", { state: 
+      { seats: seatNumbers, 
+        name: name, 
+        cpf: cpf , 
+        title: completeInfoMovie.movie.title,
+        time: completeInfoMovie.name,
+        date: completeInfoMovie.day.date
+      } });
   }
   return (
     <form onSubmit={rentSeats}>
@@ -39,9 +48,7 @@ export default function Form({chosenSeats}){
           required
         />
       </div>
-      <Link to={"/sucesso"}>
-        <button type="submit">Reservar assento(s)</button>
-      </Link>
+      <button type="submit" className="submit">Reservar assento(s)</button>
     </form>
   );
 }

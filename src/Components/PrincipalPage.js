@@ -1,7 +1,8 @@
-import PostFilm from "./PostFilm";
 import { useState , useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
+import PostFilm from "./PostFilm";
 
 export default function PrincipalPage(){
   const [listOfFilms , setListOfFilmes] = useState([]);
